@@ -76,7 +76,7 @@ const JobList = () => {
           <div key={job._id} className="p-4 bg-white shadow-md rounded-lg">
             <h3 className="text-xl font-semibold">{job.jobTitle}</h3>
             <p className="text-gray-600">{job.description}</p>
-            <h3 className="text-xl font-semibold">{job.AdditionalQuestionType }</h3>
+            {/* <h3 className="text-xl font-semibold">{job.AdditionalQuestionType }</h3> */}
             <h3 className="text-xl font-semibold">{job.EmploymentType }</h3>
             <h3 className="text-xl font-semibold">{job.InterviewDateType }</h3>
             <h3 className="text-xl font-semibold">{job.location }</h3>

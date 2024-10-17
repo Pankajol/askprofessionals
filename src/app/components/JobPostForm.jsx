@@ -8,7 +8,7 @@ const JobPostForm = () => {
     jobTitle: "",
     jobType: "",
     EmploymentType: "",
-    AdditionalQuestionType: "",
+    // AdditionalQuestionType: "",
     InterviewDateType: "",
     location: "",
     salary: "",
@@ -249,8 +249,8 @@ const JobPostForm = () => {
             </div>
           </>
         )}
-
-        {step === 2 && (
+      
+       { step === 2 && (
           <>
             <div className="col-span-2 md:col-span-1">
               <h2 className="text-2xl font-semibold mb-2">
@@ -267,7 +267,7 @@ const JobPostForm = () => {
                 When are you looking to start interviews?
               </label>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {/* Salary Expectations Radio */}
+                
                 <div className="flex items-center space-x-2">
                   <input
                     type="radio"
@@ -289,7 +289,7 @@ const JobPostForm = () => {
                   </label>
                 </div>
 
-                {/* Years of Experience Radio */}
+                
                 <div className="flex items-center space-x-2">
                   <input
                     type="radio"
@@ -311,7 +311,7 @@ const JobPostForm = () => {
                   </label>
                 </div>
 
-                {/* Location Radio */}
+                
                 <div className="flex items-center space-x-2">
                   <input
                     type="radio"
@@ -333,7 +333,7 @@ const JobPostForm = () => {
                   </label>
                 </div>
 
-                {/* Video Application Radio */}
+                
                 <div className="flex items-center space-x-2">
                   <input
                     type="radio"

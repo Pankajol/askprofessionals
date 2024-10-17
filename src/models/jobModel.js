@@ -24,7 +24,7 @@ const jobSchema = new mongoose.Schema(
         'Where are you located?',
         'Request video applications?',
       ],
-      required: true,
+      required: false,
     },
     InterviewDateType: {
       type: String,
@@ -56,46 +56,3 @@ const jobSchema = new mongoose.Schema(
 const Job = mongoose.models.Job || mongoose.model('Job', jobSchema);
 
 export default Job;
-
-// new modelofjob
-
-// import mongoose from 'mongoose';
-
-// const jobSchema = new mongoose.Schema({
-//   jobTitle: {
-//     type: String,
-//     required: true,
-//   },
-//   jobType: {
-//     type: String,
-//     required: true,
-//   },
-//   EmploymentType: {
-//     type: String,
-//     required: true,
-//   },
-//   AdditionalQuestionType: String,
-//   InterviewDateType: String,
-//   location: {
-//     type: String,
-//     required: true,
-//   },
-//   salary: {
-//     type: Number,
-//     required: true,
-//   },
-//   experience: {
-//     type: String,
-//     required: true,
-//   },
-//   description: {
-//     type: String,
-//     required: true,
-//   },
-//   isActive: {
-//     type: Boolean,
-//     default: true,
-//   },
-// });
-
-// export default mongoose.models.Job || mongoose.model('Job', jobSchema);

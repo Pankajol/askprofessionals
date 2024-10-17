@@ -1,19 +1,14 @@
-'use client';
 
+'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-
-// import Link from 'next/link';
 
 export default function SignIn() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
-    const [signedIn, setSignedIn] = useState(false);
     const router = useRouter();
-
-   
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -35,8 +30,10 @@ export default function SignIn() {
                 throw new Error(data.error || 'Something went wrong');
             }
 
-            // Set signedIn to true when sign-in is successful
-            setSignedIn(true);
+            // Save the token to localStorage or cookies
+            localStorage.setItem('token', data.token);
+
+            // Redirect to the dashboard
             router.push('/dashboard');
 
         } catch (error) {
@@ -72,7 +69,6 @@ export default function SignIn() {
                         required
                     />
                 </div>
-                {/* <Link href="/dashboard"> */}
                 <button
                     type="submit"
                     className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
@@ -80,17 +76,7 @@ export default function SignIn() {
                 >
                     {loading ? 'Signing In...' : 'Sign In'}
                 </button>
-                {/* </Link> */}
             </form>
-
-            {/* {signedIn && (
-                <div className="mt-4">
-                    <p>Sign-in successful! Go to your dashboard:</p>
-                    <Link href="/post-jobs">
-                        <p className="text-blue-500 hover:underline">Dashboard</p>
-                    </Link>
-                </div>
-            )} */}
         </div>
     );
 }

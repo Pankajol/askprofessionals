@@ -49,28 +49,28 @@ export default function Header() {
               <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg">
                 <ul className="py-2">
                   <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link href="/industry/information-technology">Information Technology</Link>
+                    <p >Information Technology</p>
                   </li>
                   <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link href="/industry/manufacturing">Manufacturing</Link>
+                    <p >Manufacturing</p>
                   </li>
                   <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link href="/industry/trading">Trading</Link>
+                    <p>Trading</p>
                   </li>
                   <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link href="/industry/banks">Banks</Link>
+                    <p>Banks</p>
                   </li>
                   <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link href="/industry/nbfc">NBFC</Link>
+                    <p >NBFC</p>
                   </li>
                   <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link href="/industry/insurance">Insurance</Link>
+                    <p>Insurance</p>
                   </li>
                   <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link href="/industry/shipping">Shipping</Link>
+                    <p>Shipping</p>
                   </li>
                   <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link href="/industry/edtech">Edtech</Link>
+                    <p>Edtech</p>
                   </li>
                 </ul>
               </div>

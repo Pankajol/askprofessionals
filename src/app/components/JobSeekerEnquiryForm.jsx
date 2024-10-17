@@ -101,7 +101,7 @@ export default function JobSeekerEnquiryForm({ selectedJob }) {
     <div className="py-10 px-4">
       <div className="max-w-4xl mx-auto bg-white p-8 shadow-lg rounded-lg">
         <h1 className="text-center text-2xl font-semibold mb-6">
-          Apply for {selectedJob.jobTitle}
+          Apply for {selectedJob?.jobTitle || "Job-Seeker"}
         </h1>
         {error && <p className="text-red-500 text-center">{error}</p>}
         <form

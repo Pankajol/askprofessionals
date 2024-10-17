@@ -1,6 +1,7 @@
-"use cleint"
+"use client"
 import React from 'react';
 import Carousel from '../components/Carousel'; // Assuming you have a Carousel component
+// import Image from 'next/image';
 
 const IndustryPage = () => {
   return (

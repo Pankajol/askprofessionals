@@ -1,7 +1,6 @@
-// app/services/page.js
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+
 import { Briefcase, Users, Settings } from 'lucide-react';
+import Image from 'next/image';
 
 
 export default function Services() {
