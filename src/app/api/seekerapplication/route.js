@@ -50,3 +50,17 @@ export async function POST(request) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
+
+
+export async function GET() {
+  try {
+    // Fetch all applications from the database
+    const jobseekerapplications = await SeekerApplication.find({});
+
+    // Return the applications as a JSON response
+    return NextResponse.json({ jobseekerapplications }, { status: 200 });
+  } catch (error) {
+    // Handle any errors
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+}

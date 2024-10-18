@@ -1,10 +1,8 @@
-// src/app/employer/page.js
-"use client"
+"use client";
 import { useState } from 'react';
 
 export default function EmployerEnquiryForm() {
   const [formData, setFormData] = useState({
-    employer: '',
     website: '',
     employees: '',
     numEmployees: '',
@@ -14,7 +12,6 @@ export default function EmployerEnquiryForm() {
     mobile: '',
     company: '',
     message: '',
-    captcha: '',
   });
 
   const handleInputChange = (e) => {
@@ -22,34 +19,48 @@ export default function EmployerEnquiryForm() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
+
+    try {
+      const response = await fetch('/api/employer-enquiry', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData), // Send as JSON
+      });
+
+      if (response.ok) {
+        console.log('Enquiry submitted successfully');
+        setFormData({
+          website: '',
+          employees: '',
+          numEmployees: '',
+          resourceType: '',
+          name: '',
+          email: '',
+          mobile: '',
+          company: '',
+          message: '',
+        });
+        alert('Enquiry submitted successfully!');
+      } else {
+        console.error('Failed to submit enquiry');
+        alert('Failed to submit enquiry');
+      }
+    } catch (error) {
+      console.error('Error submitting enquiry:', error);
+      alert('Error submitting enquiry');
+    }
   };
 
   return (
-    <div className=" py-10 px-4">
-      
+    <div className="py-10 px-4">
       <div className="max-w-4xl mx-auto bg-white p-8 shadow-lg rounded-lg">
         <h1 className="text-center text-2xl font-semibold mb-6">Employer Enquiry Form</h1>
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Employer */}
-          {/* <div>
-            <label className="block mb-2 font-medium">Employer<span className="text-red-500">*</span></label>
-            <select
-              name="employer"
-              value={formData.employer}
-              onChange={handleInputChange}
-              className="w-full border border-gray-300 rounded-lg p-2"
-            >
-              <option>Employer</option>
-              <option>Deputees/Employee</option>
-              <option>Job Seeker</option>
-             
-            </select>
-          </div> */}
-
-          {/* Website Address */}
+          {/* Form Fields */}
           <div>
             <label className="block mb-2 font-medium">Website Address<span className="text-red-500">*</span></label>
             <input
@@ -58,36 +69,21 @@ export default function EmployerEnquiryForm() {
               value={formData.website}
               onChange={handleInputChange}
               className="w-full border border-gray-300 rounded-lg p-2"
-              placeholder="Web Address"
+              placeholder="Enter Website Address"
             />
           </div>
 
           {/* Employees */}
           <div>
             <label className="block mb-2 font-medium">Employees</label>
-            <select
+            <input
+              type="text"
               name="employees"
               value={formData.employees}
               onChange={handleInputChange}
               className="w-full border border-gray-300 rounded-lg p-2"
-            >
-              <option>Select Employees</option>
-              {/* Add options here */}
-            </select>
-          </div>
-
-          {/* Number of Employees */}
-          <div>
-            <label className="block mb-2 font-medium">Number of Employees to be Recruited</label>
-            <select
-              name="numEmployees"
-              value={formData.numEmployees}
-              onChange={handleInputChange}
-              className="w-full border border-gray-300 rounded-lg p-2"
-            >
-              <option>Choose Number of Employees</option>
-              {/* Add options here */}
-            </select>
+              placeholder="Enter Number of Employees"
+            />
           </div>
 
           {/* Type of Resource to be Hired */}
@@ -98,7 +94,7 @@ export default function EmployerEnquiryForm() {
               value={formData.resourceType}
               onChange={handleInputChange}
               className="w-full border border-gray-300 rounded-lg p-2 h-24"
-              placeholder="Type of Resource"
+              placeholder="Type of Resource to be Hired"
             />
           </div>
 
@@ -165,32 +161,6 @@ export default function EmployerEnquiryForm() {
               placeholder="Enter Your Message"
             />
           </div>
-
-          {/* Captcha */}
-          {/* <div className="md:col-span-2">
-            <label className="block mb-2 font-medium">Enter Captcha</label>
-            <div className="flex items-center space-x-4">
-              <input
-                type="text"
-                name="captcha"
-                value={formData.captcha}
-                onChange={handleInputChange}
-                className="w-full border border-gray-300 rounded-lg p-2"
-                placeholder="Enter Captcha"
-              />
-              //  Add Captcha Image  
-              <div className="bg-red-500 p-2 rounded">
-                <img src="/images/captcha.png" alt="Captcha" />
-              </div>
-              <button type="button" className="bg-gray-300 p-2 rounded-lg">🔄</button>
-            </div>
-          </div> */}
-
-          {/* Email Opt Out */}
-          {/* <div className="md:col-span-2 flex items-center space-x-2">
-            <input type="checkbox" id="optOut" className="w-5 h-5" />
-            <label htmlFor="optOut" className="font-medium">Email Opt Out</label>
-          </div> */}
 
           {/* Submit Button */}
           <div className="md:col-span-2 text-center">

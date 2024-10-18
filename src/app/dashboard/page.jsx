@@ -5,8 +5,10 @@ import React, { useState, useEffect } from "react";
 import JobPostForm from "../components/JobPostForm";
 import JobList from "../components/JobList";
 import JobApplicationList from "../components/JobApplicationList";
+import JobSeekerApplicationList from "../components/JobSeekerApplicationList"
 import { useRouter } from 'next/navigation'; // Used for redirecting
 import {jwtDecode} from 'jwt-decode'; // To decode JWT tokens
+import EmployerEnquiries from "../components/Employerenquiries";
 
 const Dashboard = () => {
     const [activeTab, setActiveTab] = useState("jobs"); // Default active tab is 'jobs'
@@ -91,6 +93,18 @@ const Dashboard = () => {
                     >
                         All Applications
                     </button>
+                    <button
+                        onClick={() => handleTabChange("Job-Seeker")}
+                        className={`p-2 ${activeTab === "Job-Seeker" ? "bg-blue-600 text-white" : "bg-gray-300"}`}
+                    >
+                        All Job-Seeker
+                    </button>
+                    <button
+                        onClick={() => handleTabChange("Employer-Enquiries")}
+                        className={`p-2 ${activeTab === "Employer-Enquiries" ? "bg-blue-600 text-white" : "bg-gray-300"}`}
+                    >
+                        All Employer-Enquiries
+                    </button>
                 </section>
 
                 {/* Tab Content */}
@@ -117,6 +131,22 @@ const Dashboard = () => {
                                 searchTitle={searchTitle}
                                 searchCategory={searchCategory}
                             />
+                        </section>
+                    </>
+                )}
+                {activeTab === "Job-Seeker" &&(
+                    <>
+                    <section className="my-6">
+                            <h2 className="text-2xl font-semibold mb-4">All Job-Seeker</h2>
+                           <JobSeekerApplicationList />
+                        </section>
+                    </>
+                )}
+                  {activeTab === "Employer-Enquiries" &&(
+                    <>
+                    <section className="my-6">
+                            <h2 className="text-2xl font-semibold mb-4">All Employer List</h2>
+                           <EmployerEnquiries />
                         </section>
                     </>
                 )}
