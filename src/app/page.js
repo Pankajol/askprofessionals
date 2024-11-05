@@ -1,6 +1,7 @@
 // app/page.js
 "use client"
 import { useState, useEffect } from 'react';
+import Contact from './components/Contact'
 import { ChevronLeft, ChevronRight,Briefcase, Users, Settings } from 'lucide-react';
 
 
@@ -143,7 +144,7 @@ useEffect(() => {
             
 
             {/* Contact Form */}
-            <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
+            {/* <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
               <h3 className="text-xl font-semibold text-gray-800 mb-4">Contact Form</h3>
               <form className="space-y-4">
                 <div>
@@ -180,7 +181,8 @@ useEffect(() => {
                   Submit
                 </button>
               </form>
-            </div>
+            </div> */}
+            <Contact /> 
           </div>
         </div>
       </section>
