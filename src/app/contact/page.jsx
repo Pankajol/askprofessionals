@@ -3,9 +3,10 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import Contact from '../components/Contact';
 
 
-export default function Contact() {
+export default function ContactPage() {
   return (
     <div className="bg-secondary min-h-screen">
    
@@ -18,9 +19,9 @@ export default function Contact() {
           {/* Contact Form */}
           <div className="bg-white shadow-md rounded-lg p-8 w-full md:w-2/3">
             <h2 className="text-2xl font-semibold mb-6 text-gray-700">Get in Touch</h2>
-            <form className="space-y-6">
+           {/*  <form className="space-y-6">
               <div className="flex flex-col md:flex-row gap-6">
-                {/* Name Input */}
+                
                 <div className="w-full">
                   <label className="block text-sm font-medium text-gray-700">Name</label>
                   <input 
@@ -30,7 +31,7 @@ export default function Contact() {
                   />
                 </div>
 
-                {/* Phone Number Input */}
+                
                 <div className="w-full">
                   <label className="block text-sm font-medium text-gray-700">Phone Number</label>
                   <input 
@@ -41,7 +42,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Email Input */}
+              
               <div className="w-full">
                 <label className="block text-sm font-medium text-gray-700">Email</label>
                 <input 
@@ -51,7 +52,7 @@ export default function Contact() {
                 />
               </div>
 
-              {/* Message Input */}
+            
               <div className="w-full">
                 <label className="block text-sm font-medium text-gray-700">Message</label>
                 <textarea 
@@ -60,7 +61,6 @@ export default function Contact() {
                 />
               </div>
 
-              {/* Submit Button */}
               <div>
                 <button 
                   type="submit" 
@@ -69,8 +69,9 @@ export default function Contact() {
                   Send Message
                 </button>
               </div>
-            </form>
-          </div>
+            </form>*/}
+          <Contact />
+          </div> 
 
           {/* Contact Information */}
           <div className="bg-primary  shadow-md rounded-lg p-8 w-full md:w-1/3 space-y-6">
