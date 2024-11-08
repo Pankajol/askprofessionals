@@ -27,17 +27,15 @@
 // }
 
 
-
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { Analytics } from "@vercel/analytics/react";
 
-
 export const metadata = {
-  title: "Ask Professionals - Professional Recruitment and Job Placement Services",
+  title: "Ask Professionals",
   description:
-    "Discover top recruitment solutions for businesses and job seekers, offering a comprehensive range of staffing, recruitment, and employment services.",
+    "Find top talent or your next career opportunity with Ask Professionals. Specialized recruitment and job placement services tailored for businesses and job seekers.",
   keywords:
     "recruitment agency, job placement, professional services, staffing solutions, hiring",
   openGraph: {
@@ -75,6 +73,20 @@ export default function RootLayout({ children }) {
           name="google-site-verification"
           content="6hSqOwc5Lrrn0MigAOTRM6a-GkEznl3nGWcXWCb6Sow"
         />
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <meta name="keywords" content={metadata.keywords} />
+        <meta property="og:title" content={metadata.openGraph.title} />
+        <meta property="og:description" content={metadata.openGraph.description} />
+        <meta property="og:url" content={metadata.openGraph.url} />
+        <meta property="og:type" content={metadata.openGraph.type} />
+        <meta property="og:image" content={metadata.openGraph.images[0].url} />
+        <meta name="twitter:card" content={metadata.twitter.card} />
+        <meta name="twitter:site" content={metadata.twitter.site} />
+        <meta name="twitter:title" content={metadata.twitter.title} />
+        <meta name="twitter:description" content={metadata.twitter.description} />
+        <meta name="twitter:image" content={metadata.twitter.images} />
+
         {/* Structured Data for SEO */}
         <script
           type="application/ld+json"
@@ -84,7 +96,7 @@ export default function RootLayout({ children }) {
               "@type": "Organization",
               name: "Ask Professionals",
               url: "https://www.askprofessionals.in",
-              logo: "https://www.askprofessionals.in/logo.jpg",
+              logo: "https://www.askprofessionals.in/logo/ask_logo.jpg",
               description:
                 "Ask Professionals offers recruitment, job placement, and staffing solutions to connect businesses with the right talent.",
               sameAs: [
@@ -100,7 +112,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body >
+      <body>
         <Header />
         <Analytics />
         {children}
