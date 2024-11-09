@@ -33,11 +33,11 @@ import Footer from "./components/Footer";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
-  title: "Ask Professionals",
+  title: "Askprofessionals Recruitment |Askprofessionals Hiring| Recruitment  | Services Recruitment | Ataffing and Solutions",
   description:
     "Find top talent or your next career opportunity with Ask Professionals. Specialized recruitment and job placement services tailored for businesses and job seekers.",
   keywords:
-    "recruitment agency, job placement, professional services, staffing solutions, hiring",
+    "recruitment agency,staffing and solutions,staffing agencies it,staffing company,staffing solutions job placement, professional services, staffing solutions, hiring",
   openGraph: {
     title: "Ask Professionals - Your Trusted Recruitment Partner",
     description:
@@ -91,7 +91,7 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "Ask Professionals",
+              name: "Askprofessionals",
               url: "https://www.askprofessionals.in",
               logo: "https://www.askprofessionals.in/logo/ask_logo.jpg",
               description:
